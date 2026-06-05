@@ -1,0 +1,359 @@
+[
+  {
+    "title": "Arc Welding Basics & Safety",
+    "trade": "Welder",
+    "level": "Beginner",
+    "durationHrs": 4,
+    "modules": [
+      {
+        "title": "Module 1: Safety Gear First (Suraksha Sabse Pehle)",
+        "orderIndex": 1,
+        "contentText": "Welcome to Arc Welding! Site pe kaam shuru karne se pehle, humesha safety gear check karein. Welding involves extreme heat and UV rays, so never weld without a proper welding helmet with a dark filter shield to protect your eyes from 'welder's flash' or arc eye. Humesha heavy-duty leather gloves pehnein, aur aprons use karein kyunki sparks aur spatter se jalne ka khatra hota hai. Your safety is in your own hands. Machine connect karte time check for properly insulated cables to avoid electric shock. Yaara, yaad rakho, no safety, no work! Proper ventilation bhi bahut zaroori hai to avoid inhaling toxic fumes. Safety goggles ko kabhi ignore mat karna.",
+        "quiz": [
+          {
+            "question": "Welding shuru karne se pehle aankhon ke bachav ke liye sabse zaroori kya hai?",
+            "options": [
+              "Regular sunglasses",
+              "Welding helmet with dark filter",
+              "A damp cloth",
+              "Nothing"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sparks aur heat se bachne ke liye kaunse gloves pehenne chahiye?",
+            "options": [
+              "Cotton gloves",
+              "Rubber gloves",
+              "Heavy-duty leather gloves",
+              "Plastic gloves"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welding fumes se bachne ke liye site pe kya hona zaroori hai?",
+            "options": [
+              "Proper ventilation (हवा का बहाव)",
+              "Loud music",
+              "Dark lighting",
+              "Closed windows"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "title": "Module 2: Setting up the Machine (Machine Set Karna)",
+        "orderIndex": 2,
+        "contentText": "Ab aate hain machine set karne pe. The two main things are Amperage (current) aur Electrode section. Metal ki thickness ke hisaab se correct amperage set karein. Agar current zyada hoga, toh metal jal jayega (burn-through), aur agar kam hoga toh weld kamzor hoga (poor penetration). Electrode bhi sahi size ka choose karein. Ground clamp ko hamesha clean metal pe theek se lagayein, taaki circuit poora ho sake bina kisi loose connection ke. Kaam karte waqt work area clean rakhein. Koi bhi flammable material (jaise paint, petrol, sookhi lakdi) wahan nahi hona chahiye. Proper setup se hi perfection aati hai aur accidents se bacha ja sakta hai.",
+        "quiz": [
+          {
+            "question": "Agar welding machine ka amperage (current) bahut zyada ho, toh kya problem hogi?",
+            "options": [
+              "Weld strong hoga",
+              "Metal jal jayega (burn-through)",
+              "Sparks kam niklenge",
+              "Machine band ho jayegi"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Ground clamp (earth wire) kahan lagana chahiye?",
+            "options": [
+              "Paint kiye hue hisse pe",
+              "Clean metal part pe",
+              "Floor par",
+              "Plastic ke pipe pe"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welding area mein kin cheezon ko nahi rakhna chahiye?",
+            "options": [
+              "Flammable materials (aag pakadne wali cheezein)",
+              "Safety tools",
+              "Water bucket",
+              "Extra electrodes"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "title": "Module 3: Striking the Arc (Arc Lagana aur Weld Puddles)",
+        "orderIndex": 3,
+        "contentText": "Arc strike karna matchstick (maachis) jalaane jaisa hai. You can use the 'scratch start' technique or 'tapping' technique. Ek baar arc ban jaye, toh electrode ko metal se thodi doori pe hold karein (approx 3mm distance). Dhyan rakhein, distance zyada badhne mat dein, warna arc toot jayegi. Puddle (molten metal ka taalab) par nazar rakhein aur electrode ko steady aur straight chalayein. Speed na bahut fast honi chahiye aur na bahut slow. 'Dheere-dheere, focus ke saath' is the rule. Hamesha slag ko chipping hammer se hatayein after making the pass, aur wire brush se finish karein. Best welding wo hoti hai joh smooth, uniform scale patterns banaye.",
+        "quiz": [
+          {
+            "question": "Arc strike karte waqt electrode ko metal se kitni door maintain karna chahiye?",
+            "options": [
+              "1 inch",
+              "Touching the metal",
+              "Approximately 3 mm",
+              "No distance limit"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welding 'puddle' kya hota hai?",
+            "options": [
+              "Paani ka gaddha",
+              "Molten metal ka taalab (liquid metal pool)",
+              "Tools rakhne ki jagah",
+              "Welding machine ka hissa"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welding hone ke baad upar jame hue 'slag' ko kaise utarna chahiye?",
+            "options": [
+              "Haath se chukar",
+              "Chipping hammer aur wire brush se",
+              "Pani daal kar",
+              "Chor dena chahiye"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Modern Carpentry & Modular Fitting",
+    "trade": "Carpenter",
+    "level": "Intermediate",
+    "durationHrs": 6,
+    "modules": [
+      {
+        "title": "Module 1: Power Tools & Measurements First",
+        "orderIndex": 1,
+        "contentText": "Site pe kaam shuru karne se pehle, sabse bada niyam hai 'Measure twice, cut once' yani do baar naapein, ek baar kaatein. Aajkal traditional saw (aari) se zyada circular saws aur routers ka use hota hai. Hamesha dhyaan rakhein, power tools chalate waqt safety ear muffs aur goggles pehnna bahut zaroori hai. Blade guard kabhi mat hatana; ye aapke bachav ke liye hi hota hai. Lakdi (plywood ya MDF) cut karte samay support tables ka istamal karein taaki material toote nahi aur clean cut mile. Speed control theek se sikh lijiye woodworking machines pe kyonki kickback ka khatra hamesha rehta hai.",
+        "quiz": [
+          {
+            "question": "Kaam shuru karne ka sabse accha niyam kya hai?",
+            "options": [
+              "Measure twice, cut once (दो बार नापें, एक बार काटें)",
+              "Zaldi kaatein",
+              "Andaaze se cut karein",
+              "Machine bina dekhe chalayein"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Power saws use karte waqt sabse zaroori kya nahi hatana chahiye?",
+            "options": [
+              "Blade guard",
+              "Electrical cord",
+              "Dust bag",
+              "Handle"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "MDF ya Plywood cut karte samay tool ka kickback kyon hota hai?",
+            "options": [
+              "Blade blunt ya galat speed/angle se use hone pe",
+              "Wood quality achhi hone pe",
+              "Machine ka wire lamba hone pe",
+              "Measurements lene pe"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "title": "Module 2: Joinery Fundamentals (Jodaayi)",
+        "orderIndex": 2,
+        "contentText": "Ek acha carpenter apne jodo (joints) se pehchana jata hai. Modular furniture me ab keval nails (keel) lagana kaafi nahi hai. Hum dowel joints, biscuits joints, aur mortise & tenon joints use karte hain solidity ke liye. Hamesha woodworking glue zaroor lagayein join krte vaqt, yeh screw ya nail se bhi zyada poori satah ko jodta hai. Fevicol (D3 grade glue) lagakar clamps zaroor use karein, kyonki bina pressure theek se adhesion nahi hota. Jab parts dry ho jayein tab hi final screws lagakar cabinet frame kasein. Yeh choti savdhani furniture ki life 10 saal badha deti hai.",
+        "quiz": [
+          {
+            "question": "Furniture ki mazbooti ke liye keel (nails) ke sath kya zaroori hota hai?",
+            "options": [
+              "Pani",
+              "Woodworking glue aur proper joints",
+              "Tape lagana",
+              "Kewal plaster"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Glue lagane ke baad kya tool lagana zaroori hai theek se pakad (adhesion) ke liye?",
+            "options": [
+              "Hammer (hathodi)",
+              "Clamps (dabav banaye rakhne ke liye shikanja)",
+              "Measuring tape",
+              "Router"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Modular furniture mein zyadatar kis type ki locks aam ho gayi hai?",
+            "options": [
+              "Ropes (rassi)",
+              "Dowel aur Biscuit joints",
+              "Plastic sticks",
+              "Only nails"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "title": "Module 3: Finishing and Laminates",
+        "orderIndex": 3,
+        "contentText": "Structure banne ke baad finishing par baat karte hain. Plywood par laminate (sunmica) chipkate samay bubble free result lana ek kala hai. Sabse pehle surface clear karein, wahan koi dhool ya dust nahi honi chahiye. Contact cleaner/adhesive (jaise Fevicol SR) dono surfaces pe evenly lagayein, using a spatula. 10 minute rukien jab tak glue ungli na pakde (tacky touch). Fir dhyaan se laminate place karein aur roller se beech se corner ki taraf dabayein taaki hawa (air bubbles) bahar nikal jaye. Finally, edge banding lagana mat bhoolein. Agar edzes sharp lagain, to halke regmar (sandpaper) se finish karein perfection ke liye.",
+        "quiz": [
+          {
+            "question": "Laminate (sunmica) lagane se pehle surface kaisa hona chahiye?",
+            "options": [
+              "Geela",
+              "Completely clear of dust (dhool-mukt)",
+              "Teil laga hua",
+              "Rough without sanding"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Air bubbles nikalne ke liye laminate ko kaise dabana chahiye?",
+            "options": [
+              "Corner se beech ki taraf",
+              "Beech (center) se corners ki taraf dabana",
+              "Kewal kinaro par",
+              "Haath se ragadna"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Adhesive kab lagana chahiye taise hi sunmica chipkai jaye?",
+            "options": [
+              "Turant jab geela ho",
+              "Jab glue slight tacky (thoda sookh jaye aur chipchipa) feel ho",
+              "Ek din baad",
+              "Sirf sunmica par"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Advanced Bricklaying & Mortar Mixing",
+    "trade": "Mason",
+    "level": "Intermediate",
+    "durationHrs": 6,
+    "modules": [
+      {
+        "title": "Module 1: Site Inspection & Mortar Mixing (Masala Tayari)",
+        "orderIndex": 1,
+        "contentText": "Site pe kaam shuru karne se pehle, zameen ki leveling zaroor dekhein. Foundation pakki hoti hai tabhi deewar sidhi chalti hai. Aaj hum masonry mein proper mortar mixing sikh rahe hain. Sabse zaroori proportion hota hai (Cement:Sand ratio). Zyadatar brickwork 1:4 ya 1:6 ke hisaab se banta hai. Ret (sand) hamesha chaan (sieve) ke lein taaki bade kankar pathar na ayen. Paani (water-cement ratio) utna hi dalen jisse masala theek se karni (trowel) par tike lekin sukhna na lage. Yaad rakhiye masale me limit se jyada paani uski taqat aadhi kardeta hai! Kaam shuru karne se pehle helmet aur waterproof safety boots zaroor pehne. Cement ki dhool se aankhon aur fefde ki safety zaroori hai.",
+        "quiz": [
+          {
+            "question": "Masala (Mortar) banate time sabse badi galti kya hoti hai?",
+            "options": [
+              "Ret chaan kar lene pe",
+              "Paani bahut zyada mila dena",
+              "Sahi proportion rakhna",
+              "Karni (trowel) ka istemal"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Mistry (mason) ko kaunse safety shoes pehanne chahiye?",
+            "options": [
+              "Flip-flops (Chappal)",
+              "Sports shoes",
+              "Waterproof safety boots",
+              "Barefoot (Bina joote)"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Brickwork mein aam taur par Cement aur Sand ka kya ratio hota hai?",
+            "options": [
+              "1:4 ya 1:6",
+              "1:1",
+              "1:10",
+              "Sirf Cement"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "title": "Module 2: English & Flemish Bonds (Ienton ki Chinayi)",
+        "orderIndex": 2,
+        "contentText": "Deewar khadi karne ke do famous tarike hain 'English Bond' aur 'Flemish Bond'. English bond sabse mazboot hota hai, jisme ek line stretchers (lambai wali eente) ki aur dusri headers (chaudai wali eente) ki hoti hai. Iento ki chinayi karte waqt hamesha dhage (string line) aur level pipe ka sahi se use karein taaki deewar theek level aur plumb (saawul) me aaye. Saawul ko har 3-4 kaddar ke baad test karein kyuki thoda sa jhukav badi height pe jaake building gira sakta hai. Bed joint (neeche ka masala) uniform hona chahiye generally 10mm mota. Deewar ko pura straight uthana hi ek acche kaarigar ki pehchan hai.",
+        "quiz": [
+          {
+            "question": "Deewar ko sidha (vertically straight) napne ke liye kaunsa tool istemal hota hai?",
+            "options": [
+              "Plumb bob (Saawul)",
+              "Karni (Trowel)",
+              "Hammer",
+              "Channi"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "English bond ki deewar mein ienton ka pattern kaisa hota hai?",
+            "options": [
+              "Ek line stretcher aur dusri line header ki",
+              "Saari eente khadi hui",
+              "Random pattern",
+              "Kewal stretchers ki lines"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Bed joint mortar ki standard motayi kitni rakhni chahiye?",
+            "options": [
+              "2 inches",
+              "10 mm",
+              "Bilkul masala nai",
+              "50 mm"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "title": "Module 3: Curing & Finishing (Tarai aur Safayi)",
+        "orderIndex": 3,
+        "contentText": "Ek theek masonry job curing (tarai) ke mukamal hoti hai. Deewar banne ke agle kuch dino tak theek se pani maarna (curing) bahut zaroori hai kyonki cement ko hydrate hokar solidify hone mein time aur moisture chahiye. Garmi ke mausam me din me do-teen baar tarai karein varna dehydration cracks aayenge. Dusri baat, chinayi complete hote hi wet joint ki pointing karein taki joints beautiful lagein aur extra masala hat jaye jisse baad me plaster pakad (grip) ho sake. Ye chote finishing tips hi aapko ek normal mazdoor se expert mason banate hain.",
+        "quiz": [
+          {
+            "question": "Deewar pura hone ke baad curing (Tarai / Pani dena) kyun zaroori hai?",
+            "options": [
+              "Ganda karne ke liye",
+              "Cement ki mazbooti aane ki hydration process ke liye",
+              "Rang karne le liye",
+              "Time waste karne ke liye"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Agar garmi mein curing (tarai) na ki jaye toh kya hoga?",
+            "options": [
+              "Deewar halki hogi",
+              "Deewar me dehydration cracks ban jayenge",
+              "Deewar jyada strong hogi",
+              "Kuchh nai"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Extra gira hua masala remove karna kyun acha hota hai?",
+            "options": [
+              "Kyun ki future plaster mein grip theek aati hai aur clean look rehta hai.",
+              "Painting asani se hoti hai",
+              "Deewar patli rehti hai",
+              "Paani jyada jazb hota hai"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    ]
+  }
+]

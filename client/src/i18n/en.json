@@ -1,0 +1,26 @@
+{
+  "translation": {
+    "getStarted": "Get Started",
+    "lookingForWork": "I'm Looking For Work",
+    "hiring": "I'm Hiring",
+    "skillAssessment": "Skill Assessment",
+    "myCourses": "My Courses",
+    "certificate": "Certificate",
+    "jobBoard": "Job Board",
+    "resumeBuilder": "Resume Builder",
+    "apply": "Apply",
+    "download": "Download",
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "language": "Language",
+    "cert": {
+      "auth": "Skill Certification Authority",
+      "title": "Certificate of Completion",
+      "certify_that": "This is to certify that",
+      "completed_course": "has successfully completed the course",
+      "demonstrated": "and demonstrated",
+      "proficiency_in": "proficiency in"
+    }
+  }
+}

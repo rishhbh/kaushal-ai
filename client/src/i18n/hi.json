@@ -1,0 +1,26 @@
+{
+  "translation": {
+    "getStarted": "शुरू करें",
+    "lookingForWork": "मुझे काम चाहिए",
+    "hiring": "मुझे कर्मचारी चाहिए",
+    "skillAssessment": "कौशल मूल्यांकन",
+    "myCourses": "मेरे कोर्स",
+    "certificate": "प्रमाण पत्र",
+    "jobBoard": "नौकरी बोर्ड",
+    "resumeBuilder": "रिज्यूमे बनाएं",
+    "apply": "आवेदन करें",
+    "download": "डाउनलोड करें",
+    "login": "लॉग इन",
+    "logout": "लॉग आउट",
+    "dashboard": "डैशबोर्ड",
+    "language": "भाषा",
+    "cert": {
+      "auth": "कौशल प्रमाणन प्राधिकरण",
+      "title": "पूर्णता प्रमाण पत्र",
+      "certify_that": "यह प्रमाणित किया जाता है कि",
+      "completed_course": "ने सफलतापूर्वक पाठ्यक्रम पूरा किया है",
+      "demonstrated": "और प्रदर्शन किया",
+      "proficiency_in": "में प्रवीणता"
+    }
+  }
+}
