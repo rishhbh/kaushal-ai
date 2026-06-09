@@ -12,8 +12,8 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    ''
-  ], // Vite default port
+    'https://thekaushal-ai.vercel.app/'
+  ],
   credentials: true
 }));
 app.use(express.json());
