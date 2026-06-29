@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import { Globe } from 'lucide-react';
+import api from '../utils/api';
 
 const languages = [
   { code: 'hi', label: 'हिंदी', flag: '🇮🇳' },
@@ -20,15 +21,7 @@ export default function LanguageSelector() {
 
     if (user) {
       try {
-        const token = localStorage.getItem('token');
-        await fetch('http://localhost:5000/api/auth/language', {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          },
-          body: JSON.stringify({ language: newLang })
-        });
+        await api.patch('/auth/language', { language: newLang });
       } catch (error) {
         console.error('Failed to update language on server', error);
       }
