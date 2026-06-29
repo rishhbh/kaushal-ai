@@ -20,172 +20,75 @@ The platform enables workers to showcase real-world skills, earn verifiable cred
 
 ---
 
-## 🎯 Problem Statement
+## 🔄 How It Works: Platform Workflows
 
-Many skilled workers face challenges such as:
+KaushalAI operates on a dual-sided marketplace model, catering to both **Workers** and **Employers** with tailored user journeys.
 
-* Lack of professional resumes
-* Limited access to verified certifications
-* Language barriers in digital platforms
-* Difficulty proving practical expertise
-* Limited employer visibility
-* Lack of a trusted digital identity
+### 👷 Worker Journey
+1. **Onboarding & Profiling**: Workers register using their mobile numbers. The interface is available in multiple local languages (Hindi, Marathi, etc.) to ensure accessibility.
+2. **AI-Powered Assessment**: Instead of written exams, workers interact with an AI chatbot powered by Google Gemini. The AI asks practical, scenario-based questions in their chosen language based on their trade (e.g., Electrician, Welder).
+3. **Skill Validation & Certification**: Based on the chat, the AI grades the worker (Beginner, Intermediate, Advanced). A verifiable digital certificate with a unique QR code is generated instantly.
+4. **AI Resume Generation**: The platform automatically compiles the worker's profile, assessment results, and certifications into a professionally formatted, ATS-friendly resume.
+5. **Job Discovery & Application**: Workers can browse the Job Marketplace, match with jobs suited to their skill level, and apply with a single click.
 
-Traditional hiring methods often prioritize paperwork over practical competence.
-
-**KaushalAI shifts the focus from qualifications to demonstrated skills.**
+### 🏢 Employer Journey
+1. **Corporate Registration**: Employers register their companies, providing GST and industry details to establish authenticity.
+2. **Talent Acquisition**: Employers can post job openings specifying required trades and minimum skill levels.
+3. **Applicant Tracking System (Kanban)**: Employers manage applications through a visual Kanban board (Applied → Shortlisted → Interview → Hired).
+4. **Verification**: Employers can scan a worker's KaushalAI QR code to instantly verify their identity, skill level, and assessment history, ensuring trustworthy hiring.
 
 ---
 
-## ✨ Features
+## 🧠 Technical & Functional Implementation
+
+### 1. AI Assessment Engine
+The core of KaushalAI is its dynamic assessment engine. 
+- **Prompt Engineering**: The backend utilizes system prompts to instruct Google Gemini to act as an expert vocational examiner.
+- **Adaptive Questioning**: The AI evaluates the worker's text or voice-to-text inputs and adjusts the difficulty of subsequent questions.
+- **Structured Output Generation**: The AI ultimately returns a structured JSON payload containing the user's `skillLevel`, `strengths`, `gaps`, and a `recommendedCourse`, which is saved directly to MongoDB.
+
+### 2. High-Fidelity Certificate Generation
+To bridge the gap between digital and physical credentials, the platform generates authentic, print-ready certificates.
+- **Client-Side Rendering**: Uses React components combined with strict inline CSS and Hex colors to prevent theme (Dark Mode) overriding.
+- **html2canvas & jsPDF**: The DOM element is captured at 2x scale and converted into a landscape A4 PDF.
+- **QR Code Integration**: `react-qr-code` embeds a unique `/verify/:uuid` link directly on the document.
+
+### 3. Secure Authentication System
+- **Dual-Role Architecture**: Distinguishes between `User` (Worker) and `Employer` schemas.
+- **JWT & HTTP-Only Cookies**: Tokens are securely stored in cookies (`sameSite: 'Lax'`, `httpOnly: true`) to prevent XSS attacks.
+- **Middleware Protection**: Express middleware intercepts requests, decodes JWTs, and enforces role-based access (`workerOnly`, `employerOnly`).
+- **Rate Limiting**: Critical endpoints like `/login` and `/register` are rate-limited to prevent brute-force attacks.
+
+### 4. Database Architecture (MongoDB)
+- **Users / Employers**: Stores profile data, auth credentials, and preferences.
+- **Assessments**: Links AI evaluation results to the respective User.
+- **Courses & Enrollments**: Stores curriculum modules and tracks worker progress (gamified learning).
+- **Jobs & Applications**: Relational structure where Applications tie Users to Jobs and Employers, tracking status transitions.
+
+---
+
+## ✨ Key Features
 
 ### 🤖 AI-Powered Skill Assessment
-
-Powered by **Google Gemini 2.5 Flash**, KaushalAI conducts conversational and adaptive assessments tailored to vocational trades.
-
-#### Capabilities
-
-* Dynamic AI-driven questioning
+* Dynamic AI-driven questioning (Powered by Gemini 2.5 Flash)
 * Scenario-based practical evaluations
-* Skill-level analysis
-* Trade-specific assessments
-* Instant performance feedback
-* Personalized recommendations
-
-#### Supported Domains
-
-* Electrical Work
-* Plumbing
-* Welding
-* Carpentry
-* Construction
-* Technical Maintenance
-
----
+* Instant performance feedback & personalized recommendations
 
 ### 🌐 Multilingual Experience
-
-Language should never be a barrier to opportunity.
-
-KaushalAI currently supports:
-
-* 🇮🇳 Hindi
-* 🇮🇳 Marathi
-* 🇬🇧 English
-
-Workers can learn, interact, and complete assessments in their preferred language.
-
----
+* Support for 🇮🇳 Hindi, 🇮🇳 Marathi, and 🇬🇧 English via `i18next`.
+* Workers can learn, interact, and complete assessments in their native tongue.
 
 ### 📄 AI Resume Generator
-
-Transforms worker profiles, certifications, and experience into professional resumes.
-
-#### Features
-
-* ATS-friendly formatting
-* Markdown-based generation
-* Professional layouts
-* Easy export and sharing
-* Skill-focused presentation
-
-#### Resume Includes
-
-* Personal Information
-* Work Experience
-* Skills
-* Certifications
-* Assessment Results
-* Project Experience
-
----
+* Transforms worker profiles and assessment data into Markdown-based, professional layouts.
+* Easy export and sharing capabilities.
 
 ### 🏆 QR-Based Certificate Verification
+* Auto-generated, high-resolution PDF certificates.
+* Unique cryptographic UUIDs for instant employer authenticity checks.
 
-Workers receive secure digital certificates upon successful course or assessment completion.
-
-#### Benefits
-
-* Auto-generated PDF certificates
-* Unique QR verification codes
-* Employer authenticity checks
-* Reduced certificate fraud
-* Instant profile verification
-
-#### Verification Flow
-
-```text
-Assessment Completed
-        ↓
-Certificate Generated
-        ↓
-QR Code Embedded
-        ↓
-Employer Verification
-        ↓
-Trusted Hiring
-```
-
----
-
-### 👷 Worker Dashboard
-
-A centralized workspace designed for continuous career growth.
-
-#### Features
-
-* Learning Progress Tracking
-* Assessment History
-* Skill Analytics
-* Skill Radar Charts
-* Resume Management
-* Certificate Library
-* Job Application Tracking
-* Profile Management
-
----
-
-### 🏢 Employer Dashboard
-
-A hiring platform focused on verified skills and trust.
-
-#### Features
-
-* Job Posting
-* Candidate Discovery
-* Verified Worker Profiles
-* Application Management
-* Skill-Based Filtering
-* Assessment Performance Insights
-
----
-
-### 💼 Job Marketplace
-
-Connecting verified workers directly with employers.
-
-#### Features
-
-* Job Listings
-* Skill-Based Matching
-* Application Tracking
-* Employer Verification
-* Hiring Management
-
----
-
-### 🚶 Walk Reward Integration
-
-A unique wellness module promoting healthier lifestyles.
-
-#### Benefits
-
-* Activity Tracking
-* Daily Movement Goals
-* Reward-Based Engagement
-* Health Awareness
-
-Encouraging professional growth alongside physical well-being.
+### 💼 Job Marketplace & Kanban Tracker
+* Skill-based matchmaking connecting verified workers directly with employers.
+* Intuitive drag-and-drop Kanban board for employer recruitment pipelines.
 
 ---
 
@@ -194,17 +97,20 @@ Encouraging professional growth alongside physical well-being.
 ```text
 ┌─────────────────────────┐
 │     React Frontend      │
+│  (Vite, Tailwind, i18n) │
 └──────────┬──────────────┘
-           │
+           │ HTTPS / REST
            ▼
 ┌─────────────────────────┐
 │    Express Backend      │
-└──────────┬──────────────┘
-           │
- ┌─────────┴─────────┐
- ▼                   ▼
-MongoDB         Gemini API
-Database         AI Engine
+│ (JWT, Rate Limiting)    │
+└────┬───────────────┬────┘
+     │               │
+     ▼               ▼
+┌─────────┐     ┌────────────┐
+│ MongoDB │     │ Gemini API │
+│(Mongoose)     │ (AI Engine)│
+└─────────┘     └────────────┘
 ```
 
 ---
@@ -212,71 +118,39 @@ Database         AI Engine
 ## 🛠️ Tech Stack
 
 ### Frontend
-
-* React.js
-* Tailwind CSS
-* React Router
-* React Markdown
-* Lucide React
-* i18next
+* **Core**: React.js, Vite
+* **Styling**: Tailwind CSS, Lucide React icons
+* **Routing & State**: React Router
+* **Internationalization**: i18next
+* **Utilities**: html2canvas, jsPDF, react-qr-code, react-markdown
 
 ### Backend
-
-* Node.js
-* Express.js
-* JWT Authentication
-* Cookie-Based Authentication
-* REST APIs
+* **Server**: Node.js, Express.js
+* **Authentication**: JSON Web Tokens (JWT), bcrypt, cookie-parser
+* **AI Integration**: `@google/genai` (Gemini 1.5/2.5 Flash)
+* **Security**: express-rate-limit, cors
 
 ### Database
-
-* MongoDB
-* Mongoose ODM
-
-### AI & Automation
-
-* Google Gemini 1.5 Flash
-* Google Gemini 2.5 Flash
-
-### Utilities
-
-* jsPDF
-* html2canvas
-* QR Code Generation
-* i18next
+* **Database**: MongoDB
+* **ODM**: Mongoose
 
 ---
 
 ## 🎨 Design System
 
-Built for outdoor visibility and maximum readability.
+Built for outdoor visibility, low-end devices, and maximum readability.
 
-| Component        | Color     |
-| ---------------- | --------- |
-| Primary Navy     | `#1A56A0` |
-| Accent Gold      | `#F4A223` |
-| Deep Navy Text   | `#1A1A2E` |
-| White Background | `#FFFFFF` |
+| Component        | Color     | Hex       |
+| ---------------- | --------- | --------- |
+| Primary Navy     | Deep Blue | `#1A56A0` |
+| Accent Gold      | Orange    | `#F4A223` |
+| Deep Navy Text   | Dark Slate| `#1A1A2E` |
+| White Background | Pure White| `#FFFFFF` |
 
 ### Design Principles
-
-* Mobile-First
-* High Contrast
-* Accessibility Focused
-* Rural-Friendly UX
-* Lightweight Performance
-
----
-
-## 🔒 Security Features
-
-* JWT Authentication
-* Secure Cookie Sessions
-* Protected Routes
-* Role-Based Access Control
-* Input Validation
-* Secure Certificate Verification
-* API Authorization Middleware
+* **Mobile-First**: Optimized for mobile screens as the primary device for workers.
+* **High Contrast**: Ensuring readability under direct sunlight on construction sites.
+* **Accessibility Focused**: Simple iconography and native language fonts (Devanagari, etc.).
 
 ---
 
@@ -284,188 +158,94 @@ Built for outdoor visibility and maximum readability.
 
 ```bash
 KaushalAI/
-│
-├── client/
-│   ├── public/
+├── client/                 # Frontend React Application
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── context/
-│   │   └── assets/
-│   │
+│   │   ├── components/     # Reusable UI components (Navbar, Cards)
+│   │   ├── pages/          # Route-based views (Dashboards, Chat, Auth)
+│   │   ├── hooks/          # Custom React hooks (useAuth)
+│   │   ├── utils/          # API interceptors and helpers
+│   │   └── i18n/           # Language translation files
 │   └── package.json
 │
-├── server/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── utils/
+├── server/                 # Backend Express Application
+│   ├── controllers/        # Business logic (auth, courses, ai, jobs)
+│   ├── middleware/         # JWT verification, error handling, rate limits
+│   ├── models/             # Mongoose schemas (User, Employer, Job, etc.)
+│   ├── routes/             # API route definitions
+│   ├── utils/              # Seeding scripts and DB fixes
 │   └── package.json
 │
-├── README.md
-└── .env
+├── README.md               # Project documentation
+└── .env                    # Environment variables
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Setup
 
-### Clone Repository
-
+### 1. Clone Repository
 ```bash
 git clone https://github.com/your-username/KaushalAI.git
-
 cd KaushalAI
 ```
 
----
-
-### Backend Setup
-
+### 2. Backend Setup
 ```bash
 cd server
-
 npm install
 ```
-
-Create a `.env` file:
-
+Create a `server/.env` file:
 ```env
 PORT=5000
-
-MONGO_URI=your_mongodb_connection_string
-
+MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-
 GEMINI_API_KEY=your_gemini_api_key
+CLIENT_URL=http://localhost:5173
 ```
-
-Run Backend:
-
+Run Backend & Seed Database:
 ```bash
+node utils/seed.js  # Optional: Seeds database with initial courses
 npm run dev
 ```
 
----
-
-### Frontend Setup
-
+### 3. Frontend Setup
 ```bash
 cd client
-
 npm install
 ```
-
-Create a `.env` file:
-
+Create a `client/.env` file:
 ```env
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=http://localhost:5000/api
 ```
-
 Run Frontend:
-
 ```bash
 npm run dev
 ```
-
----
-
-## 📊 Current Platform Capabilities
-
-### ✅ Implemented
-
-* User Authentication & Authorization
-* AI Skill Assessments
-* Multilingual Support
-* Resume Generator
-* QR Certificate Verification
-* Worker Dashboard
-* Employer Dashboard
-* Job Portal
-* Skill Analytics
-* PDF Certificate Generation
-* Walk Reward Integration
-* Gemini-Powered Learning Experience
 
 ---
 
 ## 🔮 Future Roadmap
 
-### Phase 2
+### Phase 2: Voice & Accessibility
+* Voice-Based Assessments (Speech-to-Text evaluation)
+* Audio navigation for non-literate users
+* Additional Indian Regional Languages
 
-* Voice-Based Assessments
-* Speech-to-Text Evaluation
-* AI Career Guidance Assistant
-* Personalized Learning Paths
-* Additional Indian Languages
-
-### Phase 3
-
+### Phase 3: Institutional Integration
 * Government Skill Development Integration
 * National Digital Skill Passport
 * Blockchain-Based Credential Verification
-* Apprenticeship Marketplace
-* Employer Skill Benchmarking
 
-### Phase 4
-
-* AI Job Matching Engine
-* Workforce Demand Forecasting
-* International Verification System
+### Phase 4: Advanced AI
+* AI Job Matching Engine based on granular skill gaps
+* Workforce Demand Forecasting for employers
 * Offline-First Mobile Application
-* Smart Recommendation Ecosystem
-
----
-
-## 📈 Impact
-
-KaushalAI aims to provide:
-
-* Trusted Digital Identity
-* Verified Skill Recognition
-* Professional Visibility
-* Better Employment Opportunities
-* Accessible Learning Infrastructure
-
-for the workers who build and maintain India's future every day.
-
----
-
-## 🤝 Contributing
-
-Contributions, ideas, and feedback are welcome.
-
-1. Fork the repository
-2. Create your feature branch
-
-```bash
-git checkout -b feature/new-feature
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push to the branch
-
-```bash
-git push origin feature/new-feature
-```
-
-5. Open a Pull Request
 
 ---
 
 ## 👨‍💻 Developed By
 
 ### Rishabh
-
 **Software Developer | MERN Stack Developer**
 
 Building technology that creates measurable social impact through AI, accessibility, and trust.

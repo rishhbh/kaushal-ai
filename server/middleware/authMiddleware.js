@@ -19,7 +19,6 @@ const protect = asyncHandler(async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
-    // Check if worker or employer
     let user = await User.findById(decoded.id).select('-passwordHash');
     if (user) {
       req.user = user;
