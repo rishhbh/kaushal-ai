@@ -86,65 +86,91 @@ const CertificatePage = () => {
 
       <div className="overflow-x-auto pb-12 flex justify-center">
         {/* Certificate Container fixed to A4 Landscape ratio scaling for view */}
-        <div ref={certRef} className="w-[1123px] h-[794px] bg-[#FFFEFA] relative shadow-2xl shrink-0 overflow-hidden font-sans border-4 border-double border-[#F4A223] flex flex-col justify-between p-12">
-          
+        <div 
+          ref={certRef} 
+          className="w-[1123px] h-[794px] relative shadow-2xl shrink-0 overflow-hidden flex flex-col items-center justify-between p-16"
+          style={{ 
+            backgroundColor: '#FFFFFF',
+            backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+            color: '#1F2937'
+          }}
+        >
+          {/* Decorative Borders */}
+          <div className="absolute inset-4 border-2 border-solid opacity-20 pointer-events-none" style={{ borderColor: '#1A2E5A' }}></div>
+          <div className="absolute inset-6 border border-solid opacity-40 pointer-events-none" style={{ borderColor: '#F4A223' }}></div>
+          <div className="absolute inset-8 border border-solid opacity-20 pointer-events-none" style={{ borderColor: '#1A2E5A' }}></div>
+
+          {/* Corner Ornaments */}
+          <div className="absolute top-6 left-6 w-12 h-12 border-t-4 border-l-4" style={{ borderColor: '#1A2E5A' }}></div>
+          <div className="absolute top-6 right-6 w-12 h-12 border-t-4 border-r-4" style={{ borderColor: '#1A2E5A' }}></div>
+          <div className="absolute bottom-6 left-6 w-12 h-12 border-b-4 border-l-4" style={{ borderColor: '#1A2E5A' }}></div>
+          <div className="absolute bottom-6 right-6 w-12 h-12 border-b-4 border-r-4" style={{ borderColor: '#1A2E5A' }}></div>
+
           {/* Header */}
-          <div className="text-center mt-8 relative z-10">
-            <h1 className="text-5xl font-extrabold text-[#1A2E5A] tracking-tight">Kaushal<span className="text-accent">AI</span></h1>
-            <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-2">{t('cert.auth') || 'Skill Certification Authority'}</p>
+          <div className="text-center w-full relative z-10 mt-2">
+            <h1 className="text-5xl font-extrabold tracking-tight" style={{ color: '#1A2E5A' }}>
+              Kaushal<span style={{ color: '#F4A223' }}>AI</span>
+            </h1>
+            <p className="text-xs font-bold uppercase tracking-[0.3em] mt-3" style={{ color: '#6B7280' }}>
+              {t('cert.auth') !== 'cert.auth' ? t('cert.auth') : 'Skill Certification Authority'}
+            </p>
           </div>
 
           {/* Title & Content */}
-          <div className="text-center flex-1 flex flex-col justify-center relative z-10">
-            <h2 className="text-[56px] font-bold text-gray-800 mb-8" style={{fontFamily: "'Playfair Display', Georgia, serif"}}>
-              {t('cert.title') || 'Certificate of Completion'}
+          <div className="text-center flex-1 flex flex-col justify-center items-center relative z-10 w-full max-w-4xl mx-auto mt-6">
+            <h2 className="text-[52px] font-black uppercase tracking-widest mb-10" style={{ color: '#1A2E5A', fontFamily: "'Playfair Display', Georgia, serif" }}>
+              {t('cert.title') !== 'cert.title' ? t('cert.title') : 'Certificate of Completion'}
             </h2>
             
-            <p className="text-2xl text-gray-500 italic mb-6" style={{fontFamily: "Georgia, serif"}}>
-              {t('cert.certify_that') || 'This is to certify that'}
+            <p className="text-2xl italic mb-8" style={{ color: '#4B5563', fontFamily: "Georgia, serif" }}>
+              {t('cert.certify_that') !== 'cert.certify_that' ? t('cert.certify_that') : 'This is to proudly certify that'}
             </p>
             
-            <h3 className="text-6xl font-extrabold text-[#1A2E5A] mb-8 capitalize underline decoration-2 underline-offset-8 decoration-gray-200 pb-2">
-              {cert.workerName}
-            </h3>
+            <div className="w-full flex justify-center mb-8">
+              <h3 className="text-6xl font-extrabold pb-2 border-b-2 px-12 capitalize" style={{ color: '#111827', borderColor: '#F4A223', fontFamily: "'Playfair Display', Georgia, serif" }}>
+                {cert.workerName}
+              </h3>
+            </div>
             
-            <p className="text-2xl text-gray-500 italic mb-6" style={{fontFamily: "Georgia, serif"}}>
-              {t('cert.completed_course') || 'has successfully completed the course'}
+            <p className="text-2xl italic mb-8" style={{ color: '#4B5563', fontFamily: "Georgia, serif" }}>
+              {t('cert.completed_course') !== 'cert.completed_course' ? t('cert.completed_course') : 'has successfully completed the comprehensive course'}
             </p>
             
-            <h4 className="text-4xl font-bold text-[#F4A223] mb-8">
-              {cert.courseName.toUpperCase()}
+            <h4 className="text-4xl font-bold uppercase tracking-wide mb-8" style={{ color: '#F4A223' }}>
+              {cert.courseName}
             </h4>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
-              {t('cert.demonstrated') || 'and demonstrated'} <strong className="text-primary font-bold">{cert.skillLevel}</strong> {t('cert.proficiency_in') || 'proficiency in'} <strong className="text-gray-900 border-b-2 border-primary pb-0.5">{cert.trade}</strong>.
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed font-medium" style={{ color: '#374151' }}>
+              {t('cert.demonstrated') !== 'cert.demonstrated' ? t('cert.demonstrated') : 'and has demonstrated a'} <strong style={{ color: '#1A2E5A', fontWeight: '800' }}>{cert.skillLevel}</strong> {t('cert.proficiency_in') !== 'cert.proficiency_in' ? t('cert.proficiency_in') : 'level of proficiency in'} <strong style={{ color: '#111827', borderBottom: '2px solid #F4A223' }}>{cert.trade}</strong>.
             </p>
           </div>
 
            {/* Footer Elements */}
-          <div className="flex justify-between items-end px-12 mb-8 relative z-10">
+          <div className="w-full flex justify-between items-end px-12 relative z-10 mb-2 mt-4">
             {/* Bottom Left: Issued Date & UUID */}
-            <div className="text-left flex flex-col justify-end w-64 h-32">
-              <p className="text-lg font-serif italic text-gray-600 font-bold border-b-2 border-gray-300 pb-2 mb-2 inline-block px-4 w-max">
-                {new Date(cert.issuedAt).toLocaleDateString()}
+            <div className="text-left flex flex-col justify-end w-64">
+              <p className="text-xl font-bold border-b pb-2 mb-2 inline-block px-2" style={{ color: '#1F2937', borderColor: '#9CA3AF' }}>
+                {new Date(cert.issuedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
-              <p className="font-bold text-gray-800 text-sm uppercase tracking-wider">Issued Date</p>
-              <p className="text-xs text-gray-400 mt-2 font-mono break-all">UUID: {cert.certUUID}</p>
+              <p className="font-bold text-sm uppercase tracking-widest" style={{ color: '#6B7280' }}>Date of Issue</p>
+              <p className="text-[10px] mt-4 font-mono break-all" style={{ color: '#9CA3AF' }}>ID: {cert.certUUID}</p>
             </div>
 
             {/* Bottom Center: Signature */}
-            <div className="text-center w-64 h-32 flex flex-col justify-end items-center">
-              <div className="h-20 w-full border-b-2 border-gray-400 mb-2 flex justify-center items-end relative pb-1">
-                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Signature_of_John_Hancock.svg" alt="Signature" className="h-16 opacity-80 mix-blend-multiply drop-shadow-md absolute -bottom-2" />
+            <div className="text-center w-64 flex flex-col justify-end items-center">
+              <div className="h-24 w-full border-b mb-2 flex justify-center items-end pb-2 relative" style={{ borderColor: '#9CA3AF' }}>
+                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Signature_of_John_Hancock.svg" alt="Signature" className="h-20 opacity-90 absolute -bottom-4 mix-blend-multiply" />
               </div>
-              <p className="font-bold text-gray-800 text-sm uppercase tracking-wider">Director, KaushalAI</p>
+              <p className="font-bold text-sm uppercase tracking-widest" style={{ color: '#6B7280' }}>Director, KaushalAI</p>
             </div>
 
             {/* Bottom Right: QR Code */}
-            <div className="flex flex-col items-center justify-end w-64 h-32">
-              <div className="bg-white p-2 border-2 border-primary/20 dark:border-slate-700 shadow-sm rounded-lg mb-2">
-                <QRCode value={`https://kaushalai.app/verify/${cert.certUUID}`} size={128} level="M" fgColor="#1A2E5A" />
+            <div className="flex flex-col items-end justify-end w-64">
+              <div className="bg-white p-3 border border-gray-200 shadow-sm rounded-xl mb-2" style={{ backgroundColor: '#FFFFFF' }}>
+                <QRCode value={`https://kaushalai.app/verify/${cert.certUUID}`} size={100} level="M" fgColor="#1A2E5A" />
               </div>
+              <p className="font-bold text-xs uppercase tracking-widest text-right" style={{ color: '#9CA3AF' }}>Scan to Verify</p>
             </div>
           </div>
         </div>

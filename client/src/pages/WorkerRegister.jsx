@@ -30,7 +30,6 @@ const WorkerRegister = () => {
       setUser?.(null);
       setRole?.(null);
       localStorage.removeItem('token');
-      navigate('/');
     };
     window.addEventListener('auth:401', handle401);
     return () => window.removeEventListener('auth:401', handle401);

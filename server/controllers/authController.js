@@ -26,11 +26,12 @@ const sendTokenResponse = (user, statusCode, res) => {
 // @desc    Register Worker
 // @route   POST /api/auth/register/worker
 const registerWorker = asyncHandler(async (req, res) => {
-  console.log('Worker Registration Payload:', req.body);
   const { name, phone, password, district, state, trade, experience, language } = req.body;
+
   if (!name || !phone || !password) {
     res.status(400); throw new Error('Please include all fields');
   }
+  
   const userExists = await User.findOne({ phone });
   if (userExists) {
     res.status(400); throw new Error('Worker with this phone already exists');
@@ -41,7 +42,7 @@ const registerWorker = asyncHandler(async (req, res) => {
   const user = await User.create({
     name, phone, passwordHash, district, state, trade, experience, language, skillLevel: 'Beginner'
   });
-  
+
   if (user) {
     sendTokenResponse(user, 201, res);
   } else {
@@ -79,7 +80,7 @@ const registerEmployer = asyncHandler(async (req, res) => {
 const login = async (req, res) => {
   try {
     const { phone, email, password, role } = req.body;
-    
+
     if (role === 'worker') {
       const user = await User.findOne({ phone });
       if (!user) {
@@ -134,7 +135,7 @@ const updateLanguage = asyncHandler(async (req, res) => {
 
   const Model = req.userType === 'worker' ? User : Employer;
   const user = await Model.findByIdAndUpdate(req.user._id, { language }, { new: true }).select('-passwordHash');
-  
+
   res.status(200).json({ success: true, user });
 });
 

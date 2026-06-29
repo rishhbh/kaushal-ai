@@ -1,8 +1,9 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const connectDatabase = require('./config/connectDatabase');
 
 dotenv.config();
 
@@ -10,12 +11,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://thekaushal-ai.vercel.app/'
-  ],
+  origin: process.env.CLIENT_URL,
   credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -33,13 +32,8 @@ app.use(require('./middleware/errorHandler'));
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log('Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  })
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-  });
+
+app.listen(PORT, async () => {
+  console.log(`API running at: http://localhost:${PORT}`);
+  await connectDatabase();
+});

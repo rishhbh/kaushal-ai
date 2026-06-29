@@ -13,8 +13,7 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 
   if (!token) {
-    res.status(401);
-    throw new Error('Not authorized, no token');
+    return res.status(401).json({ success: false, message: 'Not authorized, no token' });
   }
 
   try {
@@ -36,13 +35,11 @@ const protect = asyncHandler(async (req, res, next) => {
     }
 
     res.clearCookie('token');
-    res.status(401);
-    return next(new Error('Session expired, please register again'));
+    return res.status(401).json({ success: false, message: 'Session expired, please register again' });
   } catch (error) {
     res.clearCookie('token');
-    res.status(401);
     const message = error.message === 'Session expired, please register again' ? error.message : 'Not authorized, token failed';
-    return next(new Error(message));
+    return res.status(401).json({ success: false, message });
   }
 });
 
